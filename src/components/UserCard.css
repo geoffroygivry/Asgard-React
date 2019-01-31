@@ -1,0 +1,25 @@
+.demo-card-wide.mdl-card {
+  width: 450px;
+  position: relative;
+  overflow: visible;
+}
+
+.mdl-button--fab {
+  position: absolute;
+  right: 20px;
+  bottom: 30%;
+}
+
+.very-small {
+  font-size: 10px;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 180px;
+  background: url("https://getmdl.io/assets/demos/welcome_card.jpg") center /
+    cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
