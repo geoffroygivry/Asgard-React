@@ -5,7 +5,7 @@ import "./UserCard.css";
 
 const UserCard = props => {
   return (
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div className="demo-card-wide mdl-card mdl-shadow--2dp">
       <CardMaterialUI />
     </div>
   );

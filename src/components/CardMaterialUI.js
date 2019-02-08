@@ -101,7 +101,10 @@ class RecipeReviewCard extends React.Component {
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <List>
-              <GleipnirItem description="Contract_anthracite.docx" />
+              <GleipnirItem
+                description="Contract_anthracite.docx"
+                receiver="Richard Shuter"
+              />
             </List>
           </CardContent>
         </Collapse>

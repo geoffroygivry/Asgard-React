@@ -15,19 +15,32 @@ const styles = theme => ({
   },
   inline: {
     display: "inline"
+  },
+  alignRight: {
+    float: "right"
   }
 });
+
+const onclick = () => {
+  console.log("You've clicked me!!");
+};
 
 function GleipnirItem(props) {
   const { classes } = props;
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem alignItems="flex-start" button onClick={onclick} tag="a">
       <ListItemAvatar>
         <Avatar alt="Remy Sharp" src="/Microsoft_Word.png" />
       </ListItemAvatar>
       <ListItemText
-        button={true}
-        primary={props.description}
+        primary={
+          <React.Fragment>
+            <Typography variant="h6">{props.description}</Typography>
+            <Typography component="span" className={classes.alignRight}>
+              <small>13/04/2018 at 13:45</small>
+            </Typography>
+          </React.Fragment>
+        }
         secondary={
           <React.Fragment>
             <Typography
@@ -35,10 +48,11 @@ function GleipnirItem(props) {
               className={classes.inline}
               color="textPrimary"
             >
-              <small>To: </small> <strong>Ali Connors</strong>:
+              <small>To: </small> <strong>{props.receiver}</strong>:
             </Typography>
             <Typography paragraph={true}>
-              {"Sent a copy of the contract."}
+              <br />
+              Sent a copy of the contract.
             </Typography>
           </React.Fragment>
         }
