@@ -2,7 +2,7 @@ import React from "react";
 import Topbar from "../components/Topbar";
 import PageContent from "../components/PageContent";
 import UserCard from "../components/UserCard";
-import MainBox from "../containers/MainBox";
+import ActionBox from "../containers/newBox";
 import "./App.css";
 
 class Asgard extends React.Component {
@@ -17,7 +17,10 @@ class Asgard extends React.Component {
         <Topbar />
         <main className="mdl-layout__content">
           <div className="page-content">
-            <PageContent mainGrid={<MainBox />} secondaryGrid={<UserCard />} />
+            <PageContent
+              mainGrid={<ActionBox />}
+              secondaryGrid={<UserCard />}
+            />
           </div>
         </main>
       </div>
