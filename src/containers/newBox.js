@@ -22,7 +22,7 @@ class ActionBox extends Component {
         </div>
         <div className="mdl-cell mdl-cell--4-col">
           {this.state.files.map(file => (
-            <DocDescription name={file.name} />
+            <DocDescription title={file.name} />
           ))}
         </div>
       </div>

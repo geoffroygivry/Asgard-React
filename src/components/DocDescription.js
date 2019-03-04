@@ -27,7 +27,7 @@ const styles = theme => ({
 
 class DocDescription extends React.Component {
   state = {
-    name: "Cat in the Hat",
+    name: "Hello World!",
     age: "",
     multiline: "Controlled",
     currency: "EUR"
@@ -45,11 +45,12 @@ class DocDescription extends React.Component {
         <TextField
           id="standard-read-only-input"
           label="Name of Document"
-          defaultValue="Hello World"
+          defaultValue={this.props.title}
+          onChange={this.handleChange("name")}
           className={classes.textField}
           margin="normal"
           InputProps={{
-            readOnly: true
+            readOnly: false
           }}
         />
         <TextField

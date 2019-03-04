@@ -1,7 +1,8 @@
 import React from "react";
 import Topbar from "../components/Topbar";
 import PageContent from "../components/PageContent";
-import UserCard from "../components/UserCard";
+// import UserCard from "../components/UserCard";
+import TestThings from "../components/testClassGeoff";
 import ActionBox from "../containers/newBox";
 import "./App.css";
 
@@ -19,7 +20,7 @@ class Asgard extends React.Component {
           <div className="page-content">
             <PageContent
               mainGrid={<ActionBox />}
-              secondaryGrid={<UserCard />}
+              secondaryGrid={<TestThings />}
             />
           </div>
         </main>
