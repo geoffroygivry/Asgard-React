@@ -26,22 +26,39 @@ const styles = theme => ({
 });
 
 class DocDescription extends React.Component {
-  state = {
-    name: "Hello World!",
-    age: "",
-    multiline: "Controlled",
-    currency: "EUR"
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      owner: "Geoffroy Givry",
+      multiline: "Please Describe your Document to be Blockchained."
+    };
+  }
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
 
+  onFormSubmit = event => {
+    event.preventDefault();
+
+    this.props.onSubmit(this.state);
+  };
+
+  componentWillMount() {
+    this.setState({ name: this.props.title });
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form
+        onSubmit={this.onFormSubmit}
+        className={classes.container}
+        noValidate
+        autoComplete="off"
+      >
         <TextField
           id="standard-read-only-input"
           label="Name of Document"
@@ -57,7 +74,9 @@ class DocDescription extends React.Component {
           required
           id="standard-required"
           label="Owner of the document"
-          defaultValue="me"
+          defaultValue="Geoffroy Givry"
+          value={this.state.owner}
+          onChange={this.handleChange("owner")}
           className={classes.textField}
           margin="normal"
         />

@@ -21,10 +21,6 @@ const styles = theme => ({
   }
 });
 
-const buttonAction = () => {
-  console.log("This is a clicked button!");
-};
-
 function IconLabelButtons(props) {
   const { classes } = props;
   return (
@@ -32,8 +28,7 @@ function IconLabelButtons(props) {
       <Button
         variant="raised"
         color="primary"
-        button
-        onClick={buttonAction}
+        type="submit"
         className={classes.buttonSend}
       >
         {props.labelText}

@@ -14,6 +14,11 @@ class ActionBox extends Component {
       files: files
     });
   }
+
+  onSearchSubmit(term) {
+    console.log(term);
+  }
+
   render() {
     return (
       <div className="mdl-grid">
@@ -22,7 +27,7 @@ class ActionBox extends Component {
         </div>
         <div className="mdl-cell mdl-cell--4-col">
           {this.state.files.map(file => (
-            <DocDescription title={file.name} />
+            <DocDescription title={file.name} onSubmit={this.onSearchSubmit} />
           ))}
         </div>
       </div>
