@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DocDescription from "../components/DocDescription";
 import { DropzoneArea } from "material-ui-dropzone";
+import hyperledger from "../apis/hyperledger";
 
 class ActionBox extends Component {
   constructor(props) {
@@ -15,9 +16,15 @@ class ActionBox extends Component {
     });
   }
 
-  onSearchSubmit(term) {
+  onSearchSubmit = async term => {
     console.log(term);
-  }
+    await hyperledger.post("/GleipnirAsset", {
+      $class: "org.gleipnir.mainnetwork.GleipnirAsset",
+      assetId: term.name,
+      owner: `org.gleipnir.mainnetwork.GleipnirParticipant#${term.owner}`,
+      value: term.multiline
+    });
+  };
 
   render() {
     return (
